@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING CAT - The Boss Cat of SPL!</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Consider adding a link to a font library like Google Fonts here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- Example Font Awesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="images/king-cat-icon.png" alt="King Cat Icon"> <!-- REPLACE -->
+                <span>KING CAT</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#roadmap" class="active">Roadmap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="main-title-pink">KING</h1>
+                    <h1 class="main-title-pink">CAT</h1>
+                    <p class="subtitle">THE BOSS CAT OF BSC!</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-buy">BUY NOW!</button>
+                        <button class="btn btn-audit">AUDIT <span class="check-icon">✔</span></button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-cat.png" alt="King Cat Illustration"> <!-- REPLACE -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-content">
+                <div class="about-image">
+                    <img src="images/about-cat.png" alt="About King Cat Illustration"> <!-- REPLACE -->
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title-yellow">ABOUT KING CAT</h2>
+                    <p>No meme does it like the BOSS cat. He'll show the dogs and other cats what makes a great meme coin. With super cat senses & giga influence, the King Cat is building a meme kingdom that will grow beyond the BSC chain and outlive his reign and the era of cats.</p>
+                    <p>The empire of King Cat is where you meme like a BOSS. Let's get it done!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="partners-section">
+            <div class="container">
+                <h2 class="section-title-yellow">OUR PARTNERS</h2>
+                <div class="partner-logos">
+                    <div class="partner-logo"><img src="images/dextools.png" alt="DEXTools"></div> <!-- REPLACE -->
+                    <div class="partner-logo"><img src="images/pinksale.png" alt="PinkSale"></div> <!-- REPLACE -->
+                    <div class="partner-logo"><img src="images/avedex.png" alt="AveDex"></div>   <!-- REPLACE -->
+                    <div class="partner-logo"><img src="images/bscdaily.png" alt="BSCDaily"></div> <!-- REPLACE -->
+                    <div class="partner-logo"><img src="images/analytix.png" alt="AnalytixAudit"></div> <!-- REPLACE -->
+                </div>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics-section">
+            <div class="container">
+                <h2 class="main-title-pink">TOKENOMICS</h2>
+                <div class="tokenomics-content">
+                    <div class="tokenomics-card distribution-card">
+                        <h3>TOKEN DISTRIBUTION</h3>
+                        <div class="chart-container">
+                            <!-- Simple CSS Donut Chart (can be replaced with SVG/JS chart) -->
+                            <div class="donut-chart">
+                                <div class="chart-segment presale"></div>
+                                <div class="chart-segment cex"></div>
+                                <div class="chart-hole"></div>
+                            </div>
+                        </div>
+                        <div class="legend">
+                            <p><span class="dot presale-dot"></span> Presale+Liquidity <strong class="percentage">95%</strong></p>
+                            <p><span class="dot cex-dot"></span> Cex Listing <strong class="percentage">5%</strong></p>
+                        </div>
+                    </div>
+                    <div class="tokenomics-details">
+                        <div class="tokenomics-card info-card">
+                            <h3>ABOUT TOKEN</h3>
+                            <p>Token Name: <span>King Cat</span></p>
+                            <p>Token Symbol: <span>KingCat</span></p>
+                            <p>Total Supply: <span>420,000,000,000,000,000</span></p>
+                            <p>Token Address: <span id="tokenAddress">0xf51b...f0d <button onclick="copyAddress()" class="copy-btn"><i class="far fa-copy"></i></button></span></p>
+                        </div>
+                        <div class="tokenomics-card taxes-card">
+                            <h3>TAXES</h3>
+                            <p>Liquidity <span>1%</span></p>
+                            <p>Marketing <span>2%</span></p>
+                            <p>Dev <span>2%</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap-section">
+            <div class="container">
+                <h2 class="section-title-yellow">OUR ROADMAP</h2>
+                <div class="roadmap-phases">
+                    <div class="roadmap-card">
+                        <span class="phase-number">01</span>
+                        <h3>PHASE</h3>
+                        <ul>
+                            <li>Presale</li>
+                            <li>Launch</li>
+                            <li>Coingecko/Coinmarketcap Listings</li>
+                            <li>Trending on AveDex, Dexscreener & other data aggregators</li>
+                            <li>Listing on Major Exchanges</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-card">
+                        <span class="phase-number">02</span>
+                        <h3>PHASE</h3>
+                        <ul>
+                            <li>King Cat on the News</li>
+                            <li>Community Growth</li>
+                            <li>Huge Marketing Push</li>
+                            <li>Ambassadors Application</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-card">
+                        <span class="phase-number">03</span>
+                        <h3>PHASE</h3>
+                        <ul>
+                            <li>Ambassadors Announcement</li>
+                            <li>100,000+ holders</li>
+                            <li>Meme Takeover</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="images/king-cat-icon.png" alt="King Cat Icon"> <!-- REPLACE -->
+                <span>KING CAT</span>
+            </div>
+            <p class="disclaimer">$KingCat is a BEP20 token with no intrinsic value or expectation of financial return. It's solely built for entertainment, speculation and engagement incentivisation of the King Cat empire.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a> <!-- Assuming one was Medium or similar -->
+            </div>
+            <p class="copyright">© king cat 2024 - All Rights Reserved</p>
+        </div>
+        <div class="footer-accent-strip"></div>
+    </footer>
+
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('tokenAddress').innerText.split(' ')[0]; // Get address part
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Token address copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy address.');
+            });
+        }
+    </script>
+</body>
+</html>
