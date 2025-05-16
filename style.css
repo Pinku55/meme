@@ -7,7 +7,6 @@
     --white: #FFFFFF;
     --orange-btn: #F9A825;
     --text-color: #333;
-    /* Fonts - Using Fredoka One for titles, Poppins for body as examples */
     --font-title: 'Fredoka One', cursive;
     --font-body: 'Poppins', sans-serif;
 }
@@ -18,11 +17,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Added for smooth scroll from JS for non-JS fallback */
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--sky-blue);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 .container {
@@ -40,15 +44,15 @@ img {
 
 h1, h2, h3 {
     margin-bottom: 0.8em;
-    font-weight: 900; /* Extra bold for titles */
+    font-weight: 900;
 }
 
 /* --- Title Styles --- */
 .main-title-pink {
     font-family: var(--font-title);
-    font-size: clamp(3rem, 8vw, 6rem); /* Responsive font size */
+    font-size: clamp(3rem, 8vw, 6rem);
     color: var(--bright-pink);
-    text-shadow: -2px -2px 0 var(--black), 2px -2px 0 var(--black), -2px 2px 0 var(--black), 2px 2px 0 var(--black), 4px 4px 0 var(--black); /* Thicker outline */
+    text-shadow: -2px -2px 0 var(--black), 2px -2px 0 var(--black), -2px 2px 0 var(--black), 2px 2px 0 var(--black), 4px 4px 0 var(--black);
     line-height: 1;
     margin-bottom: 0.1em;
 }
@@ -65,9 +69,12 @@ h1, h2, h3 {
 
 /* --- Header --- */
 header {
-    background-color: var(--sky-blue); /* Or make it transparent if body is sky blue */
+    background-color: var(--sky-blue);
     padding: 15px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1); /* Optional subtle separation */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: sticky; /* Optional: make header sticky */
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
@@ -82,7 +89,7 @@ header {
 }
 
 .logo img {
-    width: 50px; /* Adjust as needed */
+    width: 50px;
     height: 50px;
     margin-right: 10px;
     border-radius: 50%;
@@ -109,7 +116,7 @@ nav ul li a {
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a.active,
@@ -123,8 +130,8 @@ nav ul li a:hover {
 .hero-section {
     background-color: var(--sunny-yellow);
     padding: 60px 0;
-    border-radius: 0 0 50px 50px; /* Rounded bottom corners */
-    margin-bottom: 50px; /* Space before next section */
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 50px;
 }
 
 .hero-content {
@@ -152,12 +159,13 @@ nav ul li a:hover {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-right: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 .hero-buttons .btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 
 .btn-buy {
@@ -184,10 +192,10 @@ nav ul li a:hover {
 
 .hero-image {
     flex-basis: 40%;
-    text-align: center; /* Or adjust as needed for image position */
+    text-align: center;
 }
 .hero-image img {
-    max-width: 350px; /* Adjust as needed */
+    max-width: 350px;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -212,8 +220,8 @@ nav ul li a:hover {
     text-align: center;
 }
 .about-image img {
-    max-width: 400px; /* Adjust */
-    border-radius: 20px; /* Optional: if image itself has a background */
+    max-width: 400px;
+    border-radius: 20px;
 }
 
 .about-text {
@@ -225,7 +233,7 @@ nav ul li a:hover {
     font-size: 1.1rem;
 }
 .about-text .section-title-yellow {
-    text-align: left; /* Override centered default */
+    text-align: left;
 }
 
 
@@ -250,11 +258,15 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 150px; /* Ensure they have some width */
+    min-width: 150px;
+    transition: transform 0.3s ease;
+}
+.partner-logo:hover {
+    transform: translateY(-5px);
 }
 .partner-logo img {
-    max-height: 40px; /* Adjust based on logo aspect ratios */
-    filter: grayscale(50%); /* Optional: make them slightly less prominent */
+    max-height: 40px;
+    filter: grayscale(50%);
     transition: filter 0.3s ease;
 }
 .partner-logo img:hover {
@@ -287,7 +299,7 @@ nav ul li a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .tokenomics-card h3 {
-    font-family: var(--font-body); /* Or title font if preferred */
+    font-family: var(--font-body);
     font-weight: bold;
     color: var(--black);
     margin-bottom: 20px;
@@ -302,7 +314,7 @@ nav ul li a:hover {
 }
 
 .chart-container {
-    width: 200px; /* Adjust size */
+    width: 200px;
     height: 200px;
     position: relative;
     margin-bottom: 20px;
@@ -313,8 +325,8 @@ nav ul li a:hover {
     border-radius: 50%;
     position: relative;
     background: conic-gradient(
-        var(--sunny-yellow) 0% 95%, /* Same as presale color for clarity */
-        var(--sky-blue) 95% 100%    /* CEX listing color */
+        var(--sunny-yellow) 0% 95%,
+        var(--sky-blue) 95% 100%
     );
 }
 .chart-hole {
@@ -322,7 +334,7 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%; /* Adjust for hole size */
+    width: 60%;
     height: 60%;
     background-color: var(--white);
     border-radius: 50%;
@@ -336,18 +348,21 @@ nav ul li a:hover {
     margin-right: 8px;
     vertical-align: middle;
 }
-.legend .presale-dot { background-color: var(--sunny-yellow); border: 1px solid #ccc; } /* Added border for yellow */
+.legend .presale-dot { background-color: var(--sunny-yellow); border: 1px solid #ccc; }
 .legend .cex-dot { background-color: var(--sky-blue); }
 .legend p {
     margin-bottom: 10px;
     font-size: 1rem;
     color: var(--black);
+    display: flex; /* For better alignment of percentage */
+    justify-content: space-between;
+    align-items: center;
 }
 .legend .percentage {
-    font-family: var(--font-title); /* Or a custom display font */
+    font-family: var(--font-title);
     font-size: 1.5rem;
     color: var(--black);
-    float: right;
+    /* float: right; removed for flex alignment */
 }
 
 .tokenomics-details {
@@ -359,6 +374,7 @@ nav ul li a:hover {
 .info-card p, .taxes-card p {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Align items for copy button */
     margin-bottom: 10px;
     font-size: 0.95rem;
     color: var(--black);
@@ -366,13 +382,22 @@ nav ul li a:hover {
 .info-card p span, .taxes-card p span {
     font-weight: bold;
 }
+/* Specific styling for token address line */
+.info-card p:has(.copy-btn) { /* Target the P containing the copy button */
+    word-break: break-all; /* Allow long address to wrap */
+}
+#tokenAddressVal {
+    margin-right: 5px; /* Space before copy button */
+}
+
 .copy-btn {
     background: none;
     border: none;
     color: var(--text-color);
     cursor: pointer;
     font-size: 1em;
-    margin-left: 5px;
+    padding: 5px; /* Easier to click */
+    line-height: 1; /* Ensure icon aligns well */
 }
 .copy-btn:hover { color: var(--bright-pink); }
 
@@ -395,6 +420,10 @@ nav ul li a:hover {
     border: 1px solid var(--black);
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     position: relative;
+    transition: transform 0.3s ease;
+}
+.roadmap-card:hover {
+    transform: translateY(-5px);
 }
 .roadmap-card .phase-number {
     position: absolute;
@@ -437,10 +466,9 @@ footer {
     color: var(--black);
     text-align: center;
     padding-top: 40px;
-    /* No padding-bottom on footer-content, it's handled by accent strip */
     border-radius: 50px 50px 0 0;
     margin-top: 50px;
-    position: relative; /* For the accent strip */
+    position: relative;
 }
 
 .footer-logo {
@@ -471,20 +499,21 @@ footer {
     color: var(--black);
     font-size: 1.8rem;
     margin: 0 12px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-icons a:hover {
     color: var(--bright-pink);
+    transform: scale(1.1);
 }
 
 .copyright {
     font-size: 0.85rem;
     margin-top: 25px;
-    padding-bottom: 20px; /* Space above accent strip */
+    padding-bottom: 20px;
 }
 
 .footer-accent-strip {
-    height: 15px; /* Thickness of the pink strip */
+    height: 15px;
     background-color: var(--bright-pink);
     width: 100%;
     position: absolute;
@@ -492,29 +521,30 @@ footer {
     left: 0;
 }
 
+/* --- CSS for Scroll Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-text {
-        margin-bottom: 30px;
-    }
+    .hero-content,
     .about-content {
         flex-direction: column;
         text-align: center;
     }
-    .about-text .section-title-yellow {
-        text-align: center;
-    }
-    .tokenomics-content {
-        flex-direction: column;
-    }
-    .distribution-card, .tokenomics-details {
-        flex-basis: 100%;
-    }
+    .hero-text { margin-bottom: 30px; }
+    .about-text .section-title-yellow { text-align: center; }
+    .tokenomics-content { flex-direction: column; }
+    .distribution-card, .tokenomics-details { flex-basis: 100%; }
 }
 
 @media (max-width: 768px) {
@@ -526,11 +556,10 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-    nav ul li {
-        margin: 5px;
-    }
+    nav ul li { margin: 5px; }
     .partner-logos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller logos */
+        /* Using flex for partner logos, not grid, so this adjustment is removed. */
+        /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
     }
      .hero-buttons {
         display: flex;
@@ -543,17 +572,22 @@ footer {
         width: 80%;
         max-width: 250px;
     }
-
+    .info-card p { /* Make address and copy button stack on small screens if needed */
+        flex-wrap: wrap;
+    }
+    #tokenAddressVal {
+        margin-bottom: 5px; /* Space when it wraps */
+    }
 }
 
 @media (max-width: 480px) {
-    .main-title-pink {
-        font-size: 2.5rem; /* Further reduce for very small screens */
-    }
-    .section-title-yellow {
-        font-size: 2rem;
-    }
-    .roadmap-card .phase-number {
-        font-size: 2rem;
+    .main-title-pink { font-size: 2.5rem; }
+    .section-title-yellow { font-size: 2rem; }
+    .roadmap-card .phase-number { font-size: 2rem; }
+    .logo span { font-size: 1.5rem; }
+    .logo img { width: 40px; height: 40px; }
+    .hero-buttons .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
     }
 }
